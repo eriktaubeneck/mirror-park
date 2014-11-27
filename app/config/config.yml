@@ -11,3 +11,10 @@ DEVELOPMENT: &development
   DEBUG: True
   SITE_URL: 'localhost:4999'
   SQLALCHEMY_DATABASE_URI: 'ordbok_local_config'
+
+PRODUCTION: &production
+  <<: *common
+  SITE_URL: 'mirror-park.skien.cc'
+  SECRET_KEY: 'ordbok_env_config_secret_key'
+  SECURITY_PASSWORD_SALT: 'ordbok_env_config_password_salt'
+  SQLALCHEMY_DATABASE_URI: 'ordbok_env_config_database_url'
